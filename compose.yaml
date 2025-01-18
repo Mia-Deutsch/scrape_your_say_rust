@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:6900:6900"
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: IDontLikeJavaScript
+      MYSQL_DB: ScrapedData
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - ScrapedData-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: IDontLikeJavaScript
+      MYSQL_DATABASE: ScrapedData
+volumes:
+  ScrapedData-mysql-data:
