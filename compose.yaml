@@ -3,6 +3,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: web-scraper
+    depends_on:
+      - selenium-chrome
     ports:
       - "127.0.0.1:6900:6900"
     environment:
@@ -10,8 +13,17 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: IDontLikeJavaScript
       MYSQL_DB: ScrapedData
+      SELENIUM_HOST: selenium-chrome
+      SELENIUM_PORT: 4444
+  selenium-chrome:
+    image: selenium/standalone-chrome:latest
+    container_name: selenium-chrome
+    ports:
+      - "4444:4444"
+    shm_size: "2g"
   mysql:
     image: mysql:8.0
+    container_name: mysql-db
     volumes:
       - ScrapedData-mysql-data:/var/lib/mysql
     environment:

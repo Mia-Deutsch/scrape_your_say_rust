@@ -1,5 +1,5 @@
 
-FROM rust:1.84
+FROM rust:latest
 
 WORKDIR /scrape_your_say_rust
 
