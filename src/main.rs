@@ -11,10 +11,8 @@ async fn main() -> WebDriverResult<()> {
     let selenium_port = std::env::var("SELENIUM_PORT").unwrap();
     let url = format!("http://{}:{}", selenium_host, selenium_port);
 
-    // Connect to Selenium
     let driver = WebDriver::new(&url, DesiredCapabilities::chrome()).await?;
 
-    // Interact with the browser
     driver.get("https://www.rust-lang.org").await?;
     println!("Page title: {}", driver.title().await?);
 
