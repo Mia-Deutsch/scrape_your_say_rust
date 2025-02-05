@@ -6,5 +6,5 @@ edition = "2021"
 [dependencies]
 thirtyfour = "0.35.0"
 tokio = { version = "1.43.0", features = ["full"]}
-BusinessLogic = { path = "src/BusinessLogic"}
+BusinessLogic = { path = "./BusinessLogic" }
 DataUtils = { path = "src/DataUtils"}

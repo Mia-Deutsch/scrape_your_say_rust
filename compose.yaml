@@ -15,6 +15,7 @@ services:
       MYSQL_DB: ScrapedData
       SELENIUM_HOST: selenium-chrome
       SELENIUM_PORT: 4444
+      URL: https://ec.europa.eu/info/law/better-regulation/have-your-say-simplify_en
     volumes:
       - .:/scrape_your_say_rust
   selenium-chrome:
