@@ -15,6 +15,8 @@ services:
       MYSQL_DB: ScrapedData
       SELENIUM_HOST: selenium-chrome
       SELENIUM_PORT: 4444
+    volumes:
+      - .:/scrape_your_say_rust
   selenium-chrome:
     image: selenium/standalone-chrome:latest
     container_name: selenium-chrome
