@@ -5,6 +5,10 @@ version = 4
 [[package]]
 name = "BusinessLogic"
 version = "0.1.0"
+dependencies = [
+ "thirtyfour",
+ "tokio",
+]
 
 [[package]]
 name = "DataUtils"
